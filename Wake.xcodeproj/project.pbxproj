@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A41DD8BE639F56DF1A511722 /* Pods_Wake.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87DA7CD2B1184CDE7003A96 /* Pods_Wake.framework */; };
+		B10923CF1D4D6FE400428D9A /* UnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10923CE1D4D6FE400428D9A /* UnlockViewController.swift */; };
+		B18603D11D487BE90009D6D3 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18603D01D487BE90009D6D3 /* Alarm.swift */; };
 		B192855B1D40993B00844680 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B192855A1D40993B00844680 /* AppDelegate.swift */; };
-		B192855D1D40993B00844680 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B192855C1D40993B00844680 /* ViewController.swift */; };
+		B192855D1D40993B00844680 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B192855C1D40993B00844680 /* MainViewController.swift */; };
 		B19285601D40993B00844680 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B192855E1D40993B00844680 /* Main.storyboard */; };
 		B19285621D40993B00844680 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B19285611D40993B00844680 /* Assets.xcassets */; };
 		B19285651D40993B00844680 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B19285631D40993B00844680 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A05DB4DCCED64E12E6303724 /* Pods-Wake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wake.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wake/Pods-Wake.debug.xcconfig"; sourceTree = "<group>"; };
+		A87DA7CD2B1184CDE7003A96 /* Pods_Wake.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wake.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10923CE1D4D6FE400428D9A /* UnlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockViewController.swift; sourceTree = "<group>"; };
+		B18603D01D487BE90009D6D3 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		B19285571D40993B00844680 /* Wake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B192855A1D40993B00844680 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B192855C1D40993B00844680 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B192855C1D40993B00844680 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B192855F1D40993B00844680 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B19285611D40993B00844680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B19285641D40993B00844680 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B19285661D40993B00844680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E283521083B13E421F0CC99E /* Pods-Wake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wake.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wake/Pods-Wake.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A41DD8BE639F56DF1A511722 /* Pods_Wake.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75E0D9289A4C0C28EB3EBCC9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A05DB4DCCED64E12E6303724 /* Pods-Wake.debug.xcconfig */,
+				E283521083B13E421F0CC99E /* Pods-Wake.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B18603CF1D487B6D0009D6D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B18603D01D487BE90009D6D3 /* Alarm.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		B192854E1D40993B00844680 = {
 			isa = PBXGroup;
 			children = (
 				B19285591D40993B00844680 /* Wake */,
 				B19285581D40993B00844680 /* Products */,
+				75E0D9289A4C0C28EB3EBCC9 /* Pods */,
+				D7A0F91CBDF86750B4C10254 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +82,32 @@
 		B19285591D40993B00844680 /* Wake */ = {
 			isa = PBXGroup;
 			children = (
+				B18603CF1D487B6D0009D6D3 /* Model */,
+				B1DBCC871D486E0C00BA2868 /* ViewController */,
 				B192855A1D40993B00844680 /* AppDelegate.swift */,
-				B192855C1D40993B00844680 /* ViewController.swift */,
 				B192855E1D40993B00844680 /* Main.storyboard */,
 				B19285611D40993B00844680 /* Assets.xcassets */,
 				B19285631D40993B00844680 /* LaunchScreen.storyboard */,
 				B19285661D40993B00844680 /* Info.plist */,
 			);
 			path = Wake;
+			sourceTree = "<group>";
+		};
+		B1DBCC871D486E0C00BA2868 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B192855C1D40993B00844680 /* MainViewController.swift */,
+				B10923CE1D4D6FE400428D9A /* UnlockViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		D7A0F91CBDF86750B4C10254 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A87DA7CD2B1184CDE7003A96 /* Pods_Wake.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +117,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B19285691D40993B00844680 /* Build configuration list for PBXNativeTarget "Wake" */;
 			buildPhases = (
+				E49CDD3485F2D221FB6CD354 /* [CP] Check Pods Manifest.lock */,
 				B19285531D40993B00844680 /* Sources */,
 				B19285541D40993B00844680 /* Frameworks */,
 				B19285551D40993B00844680 /* Resources */,
+				02E6E56C38A77EA594806E0E /* [CP] Embed Pods Frameworks */,
+				F53DE14A986A3488C6F4B7F5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -97,6 +146,11 @@
 					B19285561D40993B00844680 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = H3P29L5CVE;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -131,13 +185,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		02E6E56C38A77EA594806E0E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wake/Pods-Wake-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E49CDD3485F2D221FB6CD354 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F53DE14A986A3488C6F4B7F5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wake/Pods-Wake-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B19285531D40993B00844680 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B192855D1D40993B00844680 /* ViewController.swift in Sources */,
+				B10923CF1D4D6FE400428D9A /* UnlockViewController.swift in Sources */,
+				B192855D1D40993B00844680 /* MainViewController.swift in Sources */,
 				B192855B1D40993B00844680 /* AppDelegate.swift in Sources */,
+				B18603D11D487BE90009D6D3 /* Alarm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +354,7 @@
 		};
 		B192856A1D40993B00844680 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A05DB4DCCED64E12E6303724 /* Pods-Wake.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Wake/Info.plist;
@@ -261,6 +366,7 @@
 		};
 		B192856B1D40993B00844680 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E283521083B13E421F0CC99E /* Pods-Wake.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Wake/Info.plist;
@@ -289,6 +395,7 @@
 				B192856B1D40993B00844680 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

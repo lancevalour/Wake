@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main" id="BYZ-38-t0r" customClass="MainViewController" customModule="Wake" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,75 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Wake Time: 7:00 am, 07/15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyT-Gg-TQD">
+                                <rect key="frame" x="177" y="289" width="247" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pv4-fP-7Pt">
+                                <rect key="frame" x="276" y="318" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qR-5i-BP9">
+                                <rect key="frame" x="225" y="357" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Set Wake Time"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pv4-fP-7Pt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J0N-Z0-vSb"/>
+                            <constraint firstItem="eyT-Gg-TQD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dOQ-QQ-RLi"/>
+                            <constraint firstItem="1qR-5i-BP9" firstAttribute="top" secondItem="Pv4-fP-7Pt" secondAttribute="bottom" constant="8" id="lwB-fe-ScR"/>
+                            <constraint firstItem="1qR-5i-BP9" firstAttribute="top" secondItem="eyT-Gg-TQD" secondAttribute="bottom" constant="8" id="py5-vj-1AO"/>
+                            <constraint firstItem="1qR-5i-BP9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vRA-bS-ahx"/>
+                            <constraint firstItem="eyT-Gg-TQD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wb1-HR-HdN"/>
+                            <constraint firstItem="Pv4-fP-7Pt" firstAttribute="top" secondItem="eyT-Gg-TQD" secondAttribute="bottom" constant="8" id="yIE-se-pyo"/>
+                            <constraint firstItem="1qR-5i-BP9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yyf-27-Jet"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="py5-vj-1AO"/>
+                                <exclude reference="vRA-bS-ahx"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="setWakeButton" destination="1qR-5i-BP9" id="gOQ-FP-hkY"/>
+                        <outlet property="wakeLabel" destination="eyT-Gg-TQD" id="uaa-fo-vXM"/>
+                        <outlet property="wakeSwitch" destination="Pv4-fP-7Pt" id="xuv-he-QQ4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="401" y="177"/>
+        </scene>
+        <!--Unlock View Controller-->
+        <scene sceneID="4KY-eO-MvT">
+            <objects>
+                <viewController storyboardIdentifier="unlock" id="dyq-vA-4Ge" customClass="UnlockViewController" customModule="Wake" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P4o-sU-PDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Db-hv-QTg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4z6-01-rhT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Unlock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMZ-c3-TN7">
+                                <rect key="frame" x="273" y="289" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rh4-Xu-p8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071" y="177"/>
         </scene>
     </scenes>
 </document>
