@@ -31,11 +31,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Set Wake Time"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSX-KY-zxp">
+                                <rect key="frame" x="242" y="395" width="116" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Set Wake Song"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="MSX-KY-zxp" firstAttribute="top" secondItem="1qR-5i-BP9" secondAttribute="bottom" constant="8" id="CbN-0A-lVR"/>
                             <constraint firstItem="Pv4-fP-7Pt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J0N-Z0-vSb"/>
                             <constraint firstItem="eyT-Gg-TQD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dOQ-QQ-RLi"/>
+                            <constraint firstItem="MSX-KY-zxp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lEg-DV-492"/>
                             <constraint firstItem="1qR-5i-BP9" firstAttribute="top" secondItem="Pv4-fP-7Pt" secondAttribute="bottom" constant="8" id="lwB-fe-ScR"/>
                             <constraint firstItem="1qR-5i-BP9" firstAttribute="top" secondItem="eyT-Gg-TQD" secondAttribute="bottom" constant="8" id="py5-vj-1AO"/>
                             <constraint firstItem="1qR-5i-BP9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vRA-bS-ahx"/>
@@ -52,6 +59,7 @@
                     </view>
                     <connections>
                         <outlet property="setWakeButton" destination="1qR-5i-BP9" id="gOQ-FP-hkY"/>
+                        <outlet property="setWakeSongButton" destination="MSX-KY-zxp" id="lhX-TM-ud5"/>
                         <outlet property="wakeLabel" destination="eyT-Gg-TQD" id="uaa-fo-vXM"/>
                         <outlet property="wakeSwitch" destination="Pv4-fP-7Pt" id="xuv-he-QQ4"/>
                     </connections>

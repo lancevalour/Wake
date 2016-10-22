@@ -1,0 +1,60 @@
+PODS:
+  - AsyncSwift (1.7.2)
+  - DOFavoriteButton (0.0.4)
+  - Permission (1.5)
+  - Realm (1.0.1):
+    - Realm/Headers (= 1.0.1)
+  - Realm/Headers (1.0.1)
+  - RealmSwift (1.0.1):
+    - Realm (= 1.0.1)
+  - TTGSnackbar (1.0.0)
+  - UIColor_Hex_Swift (2.1)
+  - WWCalendarTimeSelector (1.2.12)
+  - XCGLogger (3.3)
+  - XLActionController (2.0.0):
+    - XLActionController/Core (= 2.0.0)
+  - XLActionController/Core (2.0.0)
+  - XLActionController/Youtube (2.0.0):
+    - XLActionController/Core
+
+DEPENDENCIES:
+  - AsyncSwift
+  - DOFavoriteButton (from `https://github.com/okmr-d/DOFavoriteButton.git`)
+  - Permission
+  - RealmSwift
+  - TTGSnackbar
+  - UIColor_Hex_Swift (~> 2.1)
+  - WWCalendarTimeSelector (from `https://github.com/weilsonwonder/WWCalendarTimeSelector.git`)
+  - XCGLogger (~> 3.3)
+  - XLActionController
+  - XLActionController/Youtube
+
+EXTERNAL SOURCES:
+  DOFavoriteButton:
+    :git: https://github.com/okmr-d/DOFavoriteButton.git
+  WWCalendarTimeSelector:
+    :git: https://github.com/weilsonwonder/WWCalendarTimeSelector.git
+
+CHECKOUT OPTIONS:
+  DOFavoriteButton:
+    :commit: a77045870c00af4dc7c1808397fdb482caf9775d
+    :git: https://github.com/okmr-d/DOFavoriteButton.git
+  WWCalendarTimeSelector:
+    :commit: e52196438dbe47ace5cc9b4294c38232bcb55eef
+    :git: https://github.com/weilsonwonder/WWCalendarTimeSelector.git
+
+SPEC CHECKSUMS:
+  AsyncSwift: 46a78bceb11f0e5bb52747f740d9692ec78d2d7c
+  DOFavoriteButton: 866e15af173d2dd5233971a1f657a5f31d2491d5
+  Permission: 2d9647f8b994a5faf7e1c5a40d4328fde158c2f2
+  Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
+  RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
+  TTGSnackbar: cb5cbecd868251268edef78b058c7ef089a3670a
+  UIColor_Hex_Swift: e91dc51f6bf252ec7bf74c8704ceedeeb7640c1c
+  WWCalendarTimeSelector: c2d233bd309969bee4609d97b8ffa06ecb46b4c0
+  XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
+  XLActionController: 97ed31237413db4d9401c6a559270f4d2b4de136
+
+PODFILE CHECKSUM: 3f2996114cf3ddaabcb5cb1f5c6a8e03b8a6c534
+
+COCOAPODS: 1.0.1

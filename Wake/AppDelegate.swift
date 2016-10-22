@@ -16,24 +16,24 @@ let Log = XCGLogger.defaultInstance()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+
     var window: UIWindow?
 //    var alarms: Dictionary<String, Alarm> = Dictionary(minimumCapacity: 0)
     
-    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // ..
         // ..
         // ..
         // Handle any action if the user opens the application throught the notification. i.e., by clicking on the notification when the application is killed/ removed from background.
         if let aLaunchOptions = launchOptions { // Checking if there are any launch options.
             // Check if there are any local notification objects.
-            if ((aLaunchOptions as NSDictionary).objectForKey("UIApplicationLaunchOptionsLocalNotificationKey") as? UILocalNotification) != nil {
+            if ((aLaunchOptions as NSDictionary).object(forKey: "UIApplicationLaunchOptionsLocalNotificationKey") as? UILocalNotification) != nil {
                 // Handle the notification action on opening. Like updating a table or showing an alert.
-                self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+                self.window = UIWindow(frame: UIScreen.main.bounds)
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 
-                let initialViewController = storyboard.instantiateViewControllerWithIdentifier("unlock")
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "unlock")
                 
                 self.window?.rootViewController = initialViewController
                 self.window?.makeKeyAndVisible()
@@ -48,12 +48,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     
-    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let initialViewController = storyboard.instantiateViewControllerWithIdentifier("unlock") 
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "unlock") 
         
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()
@@ -67,25 +67,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
     
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
     
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
     
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
     
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     

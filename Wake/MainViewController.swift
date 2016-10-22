@@ -14,13 +14,23 @@ import Async
 
 class MainViewController: UIViewController, WWCalendarTimeSelectorProtocol {
     
+    enum SpotifyCredential{
+        static let clientID = "29fdcd762db44eddb0e86e5e7b928d80"
+        static let callbackUrl = "wake-login://callback"
+    }
+    
+//    let tokenSwapURL = "http://localhost:1234/swap"
+//    let kTokenRefreshServiceURL = "http://localhost:1234/refresh"
+    
     @IBOutlet weak var wakeLabel: UILabel!
     
     @IBOutlet weak var wakeSwitch: UISwitch!
     
     @IBOutlet weak var setWakeButton: UIButton!
     
-    private let dateFormatter = NSDateFormatter()
+    @IBOutlet weak var setWakeSongButton: UIButton!
+    
+    fileprivate let dateFormatter = DateFormatter()
     
     let permission: Permission = .Notifications
     
@@ -35,10 +45,10 @@ class MainViewController: UIViewController, WWCalendarTimeSelectorProtocol {
   
     
     
-    private func initiateComponents(){
+    fileprivate func initiateComponents(){
         dateFormatter.dateFormat = "'Next Wake Time:' hh:mm a, EE, MM/dd"
         
-        if let wakeTime = NSUserDefaults.standardUserDefaults().stringForKey("wakeTime")
+        if let wakeTime = UserDefaults.standard.string(forKey: "wakeTime")
         {
             wakeLabel.text = wakeTime
         }
@@ -46,31 +56,51 @@ class MainViewController: UIViewController, WWCalendarTimeSelectorProtocol {
             wakeLabel.text = "No Wake Time Set"
         }
         
-        
-        
-        
     }
     
-    private func setComponentControl(){
+    fileprivate func setComponentControl(){
         setSetWakeButtonControl()
+        setSetWakeSongButtonControl()
+    }
+    
+    fileprivate func setSetWakeSongButtonControl(){
+        setWakeSongButton.addTarget(self, action: #selector(setWakeSong), for: .touchUpInside)
     }
     
     
-    private func setSetWakeButtonControl(){
-        setWakeButton.addTarget(self, action: #selector(setWakeTime), forControlEvents: .TouchUpInside)
+    fileprivate func setSetWakeButtonControl(){
+        setWakeButton.addTarget(self, action: #selector(setWakeTime), for: .touchUpInside)
     }
+    
+    func setWakeSong(){
+        connectToSpotify()
+    }
+    
+    func connectToSpotify(){
+        let spotifyAuth = SPTAuth.defaultInstance()
+        spotifyAuth.clientID = clientID
+        spotifyAuth.redirectURL = callbackUrl
+        spotifyAuth?.requestedScopes = SPTAuthStreamingScope
+        
+        
+        
+        
+    }
+    
+    
+    
     
     func setWakeTime(){
         
         permission.request { status in
             switch status {
-            case .Authorized:
+            case .authorized:
                 self.showTimeSelector()
-            case .Denied:
+            case .denied:
                 print("permission denied")
-            case .Disabled:
+            case .disabled:
                 print("permission disabled")
-            case .NotDetermined:
+            case .notDetermined:
                 print("permission not determined")
             }
         }
@@ -102,31 +132,31 @@ class MainViewController: UIViewController, WWCalendarTimeSelectorProtocol {
         timeSelector.optionStyles.showMonth(false)
         timeSelector.optionStyles.showYear(false)
         timeSelector.optionStyles.showTime(true)
-        timeSelector.optionCurrentDate = NSDate()
+        timeSelector.optionCurrentDate = Date()
         timeSelector.delegate = self
-        self.presentViewController(timeSelector, animated: true, completion: nil)
+        self.present(timeSelector, animated: true, completion: nil)
         
     }
     
     
-    func WWCalendarTimeSelectorDone(selector: WWCalendarTimeSelector, date: NSDate) {
+    func WWCalendarTimeSelectorDone(_ selector: WWCalendarTimeSelector, date: Date) {
         
         setAlarm(date)
         
     }
     
-    func setAlarm(date: NSDate){
+    func setAlarm(_ date: Date){
         
         
-        NSUserDefaults.standardUserDefaults().setObject(
-            self.dateFormatter.stringFromDate(date),
+        UserDefaults.standard.set(
+            self.dateFormatter.string(from: date),
             forKey: "wakeTime")
-        NSUserDefaults.standardUserDefaults().synchronize()
+        UserDefaults.standard.synchronize()
         
         
-        Log.info(dateFormatter.stringFromDate(date))
+        Log.info(dateFormatter.string(from: date))
         
-        wakeLabel.text = dateFormatter.stringFromDate(date)
+        wakeLabel.text = dateFormatter.string(from: date)
         
         
         let notification = UILocalNotification()
@@ -137,7 +167,7 @@ class MainViewController: UIViewController, WWCalendarTimeSelectorProtocol {
         notification.soundName = UILocalNotificationDefaultSoundName // play default sound
         notification.userInfo = ["title": "Wake Up", "UUID": 1] // assign a unique identifier to the notification so that we can retrieve it later
         
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        UIApplication.shared.scheduleLocalNotification(notification)
     }
     
     

@@ -11,8 +11,6 @@ import AVFoundation
 
 class UnlockViewController: UIViewController{
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -35,11 +33,11 @@ class UnlockViewController: UIViewController{
     }
     
     
-    private func initiateComponents(){
+    fileprivate func initiateComponents(){
         
     }
     
-    private func setComponentControl(){
+    fileprivate func setComponentControl(){
 
     }
 }
